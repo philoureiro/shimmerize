@@ -1,13 +1,11 @@
 .skeleton-wrapper {
   &--active {
     height: 100%;
-    border: 1px solid red;
     box-sizing: border-box;
 
     .skeleton__item {
       z-index: 1;
       position: relative;
-      border: 1px solid red;
       box-sizing: border-box;
       &::after {
         content: "";

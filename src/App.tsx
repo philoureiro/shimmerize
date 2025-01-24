@@ -1,11 +1,26 @@
-// src/App.tsx
+import React from "react"
+import withShimmerLoading from "./lib/withShimmerLoading"
 
-import Skeletonize from "./lib/Skeletonize"
-
-import "./App.css"
+const P = withShimmerLoading((props: any) => <p {...props} />)
+const Image = withShimmerLoading((props: any) => <img {...props} />)
 
 function App() {
-  return <Skeletonize />
+  const [isActive, setIsActive] = React.useState(false)
+
+  return (
+    <div>
+      <button onClick={() => setIsActive(!isActive)}>Toggle Skeleton</button>
+      <div style={{ display: "flex", gap: "10px", padding: "20px" }}>
+        <Image
+          isLoading={isActive}
+          src="https://img.cdndsgni.com/preview/12161376.jpg"
+          alt="Avatar"
+          style={{ borderRadius: "50%", width: "50px", height: "50px" }}
+        />
+        <P isLoading={isActive}>Some text here</P>
+      </div>
+    </div>
+  )
 }
 
 export default App

@@ -1,7 +1,7 @@
 import React from "react"
-import "./Skeletonize.scss"
+import "./Shimmerize.scss"
 
-function withSkeleton(WrappedComponent: React.ElementType) {
+function withShimmerLoading(WrappedComponent: React.ElementType) {
   return function SkeletonizedComponent({
     isLoading,
     ...props
@@ -16,4 +16,4 @@ function withSkeleton(WrappedComponent: React.ElementType) {
   }
 }
 
-export default withSkeleton
+export default withShimmerLoading
